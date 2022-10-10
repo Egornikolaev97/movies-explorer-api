@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const { isEmail } = require('validator');
 const { Unauthorized } = require('../utils/Unauthorized');
 
-const userSchema = new mongoose.Shcema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
     minlength: 2,
     maxlength: 30,
   },
@@ -18,9 +19,14 @@ const userSchema = new mongoose.Shcema({
     type: String,
     required: true,
     unique: true,
+    validate: {
+      validator: (v) => isEmail(v),
+      message: 'Неправильный формат почты',
+    },
   },
 });
 
+// eslint-disable-next-line func-names
 userSchema.statics.findUserByCredentials = function (email, password) {
   return this.findOne({ email })
     .select('+password')
