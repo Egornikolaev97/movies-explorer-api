@@ -42,6 +42,5 @@
     "validator": "^13.7.0",
     "winston": "^3.8.1"
   },
-  "homepage": "https://github.com/Egornikolaev97/movies-explorer-api#readme",
   "keywords": []
 }
