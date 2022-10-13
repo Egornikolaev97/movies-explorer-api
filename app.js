@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -12,6 +12,7 @@ const handleError = require('./middlewares/handleError');
 
 const app = express();
 const { PORT = 3000 } = process.env;
+
 console.log(process.env.JWT_SECRET);
 console.log(process.env.NODE_ENV);
 
