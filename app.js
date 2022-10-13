@@ -8,6 +8,7 @@ const { errors } = require('celebrate');
 const routes = require('./routes/index');
 const { DATABASE } = require('./configuration/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { limiter } = require('./middlewares/rateLimiter');
 const handleError = require('./middlewares/handleError');
 
 const app = express();
@@ -26,6 +27,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
+
+app.use(limiter);
 
 app.use(routes);
 
