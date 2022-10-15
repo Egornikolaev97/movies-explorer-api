@@ -16,6 +16,7 @@ const { PORT = 3000, NODE_ENV, DATABASE_PROD } = process.env;
 
 console.log(process.env.JWT_SECRET);
 console.log(process.env.NODE_ENV);
+console.log(process.env.DATABASE_PROD);
 
 mongoose.connect(NODE_ENV === 'production' ? DATABASE_PROD : DATABASE_DEV, {
   useNewUrlParser: true,
