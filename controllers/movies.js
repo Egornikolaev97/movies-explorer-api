@@ -1,19 +1,33 @@
 const Movie = require('../models/movie');
-const { BadRequestError } = require('../utils/BadRequestError');
-const { NotFoundError } = require('../utils/NotFoundError');
-const { ForbiddenError } = require('../utils/ForbiddenError');
+const BadRequestError = require('../utils/BadRequestError');
+const NotFoundError = require('../utils/NotFoundError');
+const ForbiddenError = require('../utils/ForbiddenError');
 const {
   errorIncorrectMovieId,
   errorMovieIdNotFound,
+  errorIncorrectUserId,
   errorDeleteRight,
   textMovieDeleted,
 } = require('../configuration/constants');
 
 // получение списка фильмов
 module.exports.getMovies = (req, res, next) => {
-  Movie.find({}).sort({ createdAt: -1 })
-    .then((movies) => res.send(movies))
-    .catch(next);
+  const { _id } = req.user;
+
+  Movie.find({ owner: _id })
+    .then((movies) => {
+      if (!movies) {
+        throw new NotFoundError(errorMovieIdNotFound);
+      }
+      res.send({ data: movies });
+    })
+    .catch((err) => {
+      if (err.name === 'CastError') {
+        next(new BadRequestError(errorIncorrectUserId));
+        return;
+      }
+      next(err);
+    });
 };
 
 // создание карточки фильма

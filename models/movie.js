@@ -17,18 +17,22 @@ const movieSchema = new mongoose.Schema({
   year: {
     type: String,
     required: true,
-    length: 4,
   },
   description: {
     type: String,
     required: true,
   },
   image: {
-    type: Object,
+    type: String,
     required: true,
     validate: isURL,
   },
   trailerLink: {
+    type: String,
+    required: true,
+    validate: isURL,
+  },
+  thumbnail: {
     type: String,
     required: true,
     validate: isURL,

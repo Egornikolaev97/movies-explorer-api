@@ -8,6 +8,8 @@ const errorUserAlreadyExists = 'Пользователь с таким email у�
 const errorUserNotFound = 'Данный пользователь не найден';
 const errorIncorrectUserId = 'Передан некорректно id пользователя';
 const errorPageNotFound = 'Страница не найдена';
+const errorIncorrectLoginData = 'Неверный email или пароль';
+const errorServerMessage = 'На сервере произошла ошибка';
 
 module.exports = {
   errorAuthorization,
@@ -20,4 +22,6 @@ module.exports = {
   errorUserNotFound,
   errorIncorrectUserId,
   errorPageNotFound,
+  errorIncorrectLoginData,
+  errorServerMessage,
 };
