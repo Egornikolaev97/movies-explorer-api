@@ -73,6 +73,10 @@ module.exports.updateUserInfo = (req, res, next) => {
         next(new BadRequestError(errorIncorrectData));
         return;
       }
+      if (err.code === 11000) {
+        next(new ConflictError(errorUserAlreadyExists));
+        return;
+      }
       if (err.name === 'CastError') {
         next(new BadRequestError(errorIncorrectUserId));
         return;

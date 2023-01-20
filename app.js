@@ -12,7 +12,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { limiter } = require('./middlewares/rateLimiter');
 
 const app = express();
-const { PORT = 3000, NODE_ENV, DATABASE_PROD } = process.env;
+const { PORT = 3500, NODE_ENV, DATABASE_PROD } = process.env;
 
 console.log(process.env.JWT_SECRET);
 console.log(process.env.NODE_ENV);
