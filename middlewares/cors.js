@@ -1,9 +1,9 @@
 // домены, разрешенные для крос-доменных запросов
 const allowedCors = [
-  'http://https://api.nikolaev.movies.nomoredomains.icu/',
-  'https://https://api.nikolaev.movies.nomoredomains.icu/',
-  'http://https://nikolaev.movies.nomoredomains.icu/',
-  'https://https://nikolaev.movies.nomoredomains.icu/',
+  'https://api.nikolaev.movies.nomoredomains.icu/',
+  'https://api.nikolaev.movies.nomoredomains.icu/',
+  'https://nikolaev.movies.nomoredomains.icu/',
+  'https://nikolaev.movies.nomoredomains.icu/',
   'http://localhost:3000/',
   'https://localhost:3000/',
   'http://localhost:3500/',
