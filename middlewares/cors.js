@@ -4,10 +4,8 @@ const allowedCors = [
   'https://api.nikolaev.movies.nomoredomains.icu/',
   'https://nikolaev.movies.nomoredomains.icu/',
   'https://nikolaev.movies.nomoredomains.icu/',
-  'http://localhost:3000/',
-  'https://localhost:3000/',
-  'http://localhost:3500/',
-  'https://localhost:3500/',
+  'localhost:3000/',
+  'localhost:3500/',
 ];
 
 module.exports.cors = (req, res, next) => {

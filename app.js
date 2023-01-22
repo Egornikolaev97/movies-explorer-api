@@ -23,11 +23,11 @@ mongoose.connect(NODE_ENV === 'production' ? DATABASE_PROD : DATABASE_DEV, {
   useNewUrlParser: true,
 });
 
+app.use(cors);
 app.use(helmet());
 app.use(requestLogger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors);
 app.use(limiter);
 app.use(routes);
 app.use(errorLogger);
