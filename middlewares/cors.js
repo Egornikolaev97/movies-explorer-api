@@ -10,7 +10,7 @@ const allowedCors = [
   'https://localhost:3500/',
 ];
 
-module.exports = (req, res, next) => {
+module.exports.cors = (req, res, next) => {
   const { origin } = req.headers; // сохраняем источник в origin
   const { method } = req; // сохраняем hhtp
   const requestHeaders = req.headers['access-control-request-headers'];
