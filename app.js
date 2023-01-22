@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const { errors } = require('celebrate');
-// const cors = require('cors');
 const handleError = require('./middlewares/handleError');
 const { cors } = require('./middlewares/cors');
 const routes = require('./routes/index');
