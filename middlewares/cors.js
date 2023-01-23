@@ -1,11 +1,11 @@
 // домены, разрешенные для крос-доменных запросов
 const allowedCors = [
+  'http://api.nikolaev.movies.nomoredomains.icu/',
   'https://api.nikolaev.movies.nomoredomains.icu/',
-  'https://api.nikolaev.movies.nomoredomains.icu/',
+  'http://nikolaev.movies.nomoredomains.icu/',
   'https://nikolaev.movies.nomoredomains.icu/',
-  'https://nikolaev.movies.nomoredomains.icu/',
-  'localhost:3000/',
-  'localhost:3500/',
+  'http://localhost:3000/',
+  'https://localhost:3000/',
 ];
 
 module.exports.cors = (req, res, next) => {
